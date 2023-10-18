@@ -112,7 +112,7 @@ main{
  
 #left-side p{
     font-size: large;
-    text-align: justify;
+    text-align: left;
 }
 
 #download-cv {
