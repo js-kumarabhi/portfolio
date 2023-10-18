@@ -459,7 +459,7 @@ hr{
     #home{
         display: flex;
         flex-wrap: wrap-reverse;
-        padding: 30px 20px;
+        padding: 30px 10px;
     }
     #right-side img{
         width: 260px;
