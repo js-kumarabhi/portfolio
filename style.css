@@ -1,3 +1,4 @@
+
 :root{
     --body-color:#111827;
     --dark-navy:#192231;
@@ -9,7 +10,7 @@
 *{
     margin: 0;padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, 'Open Sans', sans-serif;
+    font-family: monospace;
     color: var(--text-color);
     text-decoration: none;
 }
@@ -52,6 +53,8 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 main{
+    width: 100%;
+    overflow: hidden;
     margin-top: 65px;
 }
 
@@ -85,7 +88,7 @@ main{
 
 #home{
     width: 100%;
-    padding: 30px;
+    padding: 50px 30px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -519,9 +522,7 @@ hr{
     #mid-nav ul li{
         padding: 16px;
     }
-    #left-side p, #about ul li, #box-left>p, #contact-info ul li{
-        font-size: medium;
-    }
+
   }
 
   /* Media query for larger screens */
