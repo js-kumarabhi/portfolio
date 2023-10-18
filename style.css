@@ -519,6 +519,9 @@ hr{
     #mid-nav ul li{
         padding: 16px;
     }
+    #left-side p, #about ul li, #box-left>p, #contact-info ul li{
+        font-size: medium;
+    }
   }
 
   /* Media query for larger screens */
