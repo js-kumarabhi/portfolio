@@ -1,16 +1,15 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
 :root{
-    --body-color:#111827;
-    --dark-navy:#192231;
-    --light-color:#1f2937;
-    --baby-pink:#d40442;
-    --text-color:#f5f5f5;
+   --background-color-dark: #181b21;
+    --text-color: #ccc;
+    --background-top-nav: #374151;
+    --light-blue:#149eca;
 }
 
 *{
     margin: 0;padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Playpen Sans', cursive;
     color: var(--text-color);
     text-decoration: none;
 }
@@ -26,47 +25,116 @@ body::-webkit-scrollbar {
 .progress-line {
     height: 4px;
     width: 0;
-    background-color: var(--baby-pink);
+    background-color: var(--light-blue);
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 9999;
     transition: width 0.2s;
   }
-   
+  #top-nav {
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    background-color: #374151;
+}
+#top-nav>p{
+    color: var(--light-blue);
+}
 #header{
     text-align: center;
     padding: 50px 20px ;
     font-size: xx-large;
 }
-#navbar{
+
+#bottom-nav {
     width: 100%;
-    padding: 20px;
-    overflow: hidden;
-    background-color: var(--light-color);
+    padding: 18px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    background-color: #222730;
+    z-index: 999;
+}
+
+#logo>a {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--light-blue);
+    padding: 0px 6px;
+}
+
+#bottom-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+#main-menu ul li a {
+    padding: 20px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--light-blue);
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+#hover-box {
+    visibility: hidden;
+    background-color: var(--background-top-nav);
+    text-align: center;
+    padding: 20px 45px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 15%);
+    transition: transform 1s;
+    z-index: -1;
+}
+
+#main-menu ul li a:hover #hover-box {
+    visibility: visible;
+    transform: translate(-50%, -30%);
+}
+
+.sticky {
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 1;
+    width: 100%;
+}
+
+.sticky+#main {
+    padding-top: 60px;
+}
+
+#mobile-btn {
+    display: none;
+    margin-left: 14px;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--light-blue);
+    z-index: 9;
+    background-color:#222730;
 }
 main{
     width: 100%;
     overflow: hidden;
-    margin-top: 65px;
+    margin-top: 0px;
+    background-color: var(--background-color-dark);
 }
 
 #left-nav a{
     padding: 20px;
-    font-size: x-large;
+    font-size: 26px;
     font-weight: 700;
 }
 .color-span{
-    font-size: x-large;
+    font-size: 26px;
     font-weight: 700;
-    color: var(--baby-pink);
+    color: var(--light-blue);
 }
 
 #mid-nav ul{
@@ -74,12 +142,32 @@ main{
     display: flex;
 }
 #mid-nav ul li a{
-    padding: 0px 26px;
-    font-size: large;
+    padding: 20px;
     text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--light-blue);
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 1;
 }
-#mid-nav ul li a:hover{
-    color: var(--baby-pink);
+#hover-box {
+    visibility: hidden;
+    background-color: var(--background-top-nav);
+    text-align: center;
+    padding: 20px 45px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 15%);
+    transition: transform 1s;
+    z-index: -1;
+}
+
+#main-menu ul li a:hover #hover-box {
+    visibility: visible;
+    transform: translate(-50%, -30%);
 }
 
 .ri-menu-3-line{
@@ -92,7 +180,6 @@ main{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: var(--dark-navy);
     gap: 80px;
 }
 #left-side{
@@ -114,22 +201,19 @@ main{
     font-size: large;
     text-align: left;
 }
-
-#download-cv {
-    width: 160px;
-    border: 0;
-    outline: 0;
-    color: var(--text-color);
-    font-size: large;
+#download-cv{
+    border: 1px solid var(--light-blue);
+    border-bottom: 4px solid var(--light-blue);
+    border-radius: 50px;
     padding: 10px;
+    background-color: var(--background-color-dark);
+    width: 175px;
+    outline: 0;
     cursor: pointer;
-    margin: 24px 0px;
-    border-radius: 4px;
-    background-color: var(--baby-pink);
     transition: all 0.5s;
-  }
-  #download-cv span {
-    color: var(--text-color);
+}
+#download-cv span {
+    color: var(--light-blue);
     cursor: pointer;
     display: inline-block;
     position: relative;
@@ -155,45 +239,40 @@ main{
     opacity: 1;
     right: 0;
   }
-#social-links{
+#download-cv a{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--light-blue);
+    padding: 0px 6px;
+}
+
+#social-links {
     display: flex;
     width: 100%;
     justify-content: flex-start;
     align-items: center;
+    margin: 16px 0px;
 }
-#social-links a{
-    padding: 0 10px;
+#social-links a {
+    margin-right: 18px;
     display: flex;
     align-items: center;
+    color: #f2f2f2;
+    font-size: xx-large;
 }
 
 
 #right-side img{
-    width: 380px;
-    height: 380px;
-    border: 2px solid var(--baby-pink);
+    border: 1px solid var(--background-top-nav);
     padding: 20px;
-    transition: all 1s ease-in-out;
-    animation: wave 5s ease-in-out infinite;
+    border-radius: 50%;
+    filter: drop-shadow(2px 4px 6px #000);
 }
-@keyframes wave {
-    0%{
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40% ;
-    }
-    50%{
-        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60% ;
-    }
-    100%{
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40% ;
-    }
-    
-} 
 
-#about, #projects, #contact{
+#about, #portfolio, #contact{
     width: 100%;
     height: 100%;
     padding: 20px;
-    background-color: var(--dark-navy);
 }
 
 #about-me{
@@ -205,39 +284,39 @@ main{
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 20px;
 }
  #about-me-left img{
-    width: 100%;
+    width: 60%;
     filter: drop-shadow(2px 4px 6px #000);
     border: 1px solid var(--light-color);
     background:
-    linear-gradient(to right, var(--baby-pink) 4px, transparent 4px) 0 0,
-    linear-gradient(to right, var(--baby-pink) 4px, transparent 4px) 0 100%,
-    linear-gradient(to left, var(--baby-pink) 4px, transparent 4px) 100% 0,
-    linear-gradient(to left, var(--baby-pink) 4px, transparent 4px) 100% 100%,
-    linear-gradient(to bottom, var(--baby-pink) 4px, transparent 4px) 0 0,
-    linear-gradient(to bottom, var(--baby-pink) 4px, transparent 4px) 100% 0,
-    linear-gradient(to top, var(--baby-pink) 4px, transparent 4px) 0 100%,
-    linear-gradient(to top, var(--baby-pink) 4px, transparent 4px) 100% 100%;
+    linear-gradient(to right, var(--light-blue) 3px, transparent 3px) 0 0,
+    linear-gradient(to right, var(--light-blue) 3px, transparent 3px) 0 100%,
+    linear-gradient(to left, var(--light-blue) 3px, transparent 3px) 100% 0,
+    linear-gradient(to left, var(--light-blue) 3px, transparent 3px) 100% 100%,
+    linear-gradient(to bottom, var(--light-blue) 3px, transparent 3px) 0 0,
+    linear-gradient(to bottom, var(--light-blue) 3px, transparent 3px) 100% 0,
+    linear-gradient(to top, var(--light-blue) 3px, transparent 3px) 0 100%,
+    linear-gradient(to top, var(--light-blue) 3px, transparent 3px) 100% 100%;
     background-repeat: no-repeat;
-    background-size: 40px 40px;
+    background-size: 30px 30px;
     padding: 20px;
     transition: background-size 1s linear;
 }
-#about-me-left img:hover{
-    background-size: 60px 60px;   
-} 
+
 #about-me-right{
     width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 #tab{
   width: 100%;
   overflow: hidden;
-  border: 1px solid var(--dark-navy);
-  background-color: var(--light-color);
+  border-bottom: 1px solid var(--background-color-dark);
+  background-color: var(--background-top-nav);
 }
 #tab button{
     outline: 0;
@@ -249,12 +328,11 @@ main{
     cursor: pointer;
 }
 #tab button.active {
-    border-bottom: 2px solid var(--baby-pink);
+    border-bottom: 2px solid var(--light-blue);
   }
 #about-me-right .tabcontent{
-    background-color: var(--light-color);
+    background-color: var(--background-top-nav);
     padding: 20px;
-    border: 1px solid var(--dark-navy);
     height: auto;
 }
 #about-me-right .tabcontent p{
@@ -284,13 +362,13 @@ main{
     padding: 0 10px;
 }
 
-#project-box{
+#portfolio-box{
     width: 100%;
     height: 100%;
     display: flex;
     padding: 20px;
     justify-content: center;
-    background-color: var(--light-color);
+    background-color: var(--background-top-nav);
 }
 #box-left{
     width: 100%;
@@ -314,13 +392,13 @@ main{
 }
 #box-left #buttons>a{
     font-size: large;
-    padding: 10px 18px;
-    background-color: var(--body-color);
+    padding: 8px 14px;
+    background-color: var(--background-color-dark);
     border-radius: 5px;
     cursor: pointer;
 }
 #box-left #buttons>a:hover{
-    color: var(--baby-pink);
+    color: var(--light-blue);
 }
 #box-right{
     width: 100%;
@@ -337,7 +415,7 @@ main{
     object-position: center;
 }
 hr{
-    border: 1px solid var(--dark-navy);
+    border: 1px solid var(--background-color-dark);
 }
 #contact-box{
     width: 100%;
@@ -362,16 +440,16 @@ hr{
     margin-bottom: 10px;
 }
 #contact-info ul li:hover{
-    color: var(--baby-pink);
+    color: var(--light-blue);
 }
 #contact-info i{
     font-size: x-large;
     padding: 6px;
-    color: var(--baby-pink);
+    color: var(--light-blue);
 }
 #infocard{
     padding: 20px;
-    background-color: var(--light-color);
+    background-color: var(--background-top-nav);
 }
 #contact-form{
     width: 100%;
@@ -379,7 +457,6 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light-color);
 }
 #contact-form input[type=text], textarea{
     border: 0;
@@ -388,7 +465,7 @@ hr{
     padding: 12px;
     margin-bottom: 20px;
     width: 100%;
-    color: var(--dark-navy);
+    color: var(--background-color-dark);
     border-radius: 5px;
 }
 #send {
@@ -399,8 +476,8 @@ hr{
     font-weight: 500;
     border-radius: 5px;
     cursor: pointer;
-    color: var(--dark-navy);
-    background-color: var(--baby-pink);
+    color: var(--background-color-dark);
+    background-color: var(--light-blue);
     position: relative; 
   }
   
@@ -447,7 +524,7 @@ hr{
         display: flex;
         flex-wrap: wrap;
     }
-    #project-box{
+    #portfolio-box{
         display: flex;
         flex-wrap: wrap-reverse;
     }
@@ -478,49 +555,61 @@ hr{
     #tab button{
         padding: 12px;
     }
-    #project-box{
+    #portfolio-box{
         padding: 10px;
     }
-    #project-box img{
+    #portfolio-box img{
         padding: 0px;
         border-radius: 5px;
+    }
+    #about-me-right{
+        margin-top: 20px;
+    }
+    #left-side>h1{
+        font-size: 28px;
     }
     #header{
         text-align: center;
         padding: 30px 20px ;
         font-size: xx-large;
     }
-    #about, #projects, #contact{
+    #about, #portfolios, #contact{
         padding: 10px;
     }
     #mobile-btn{
         display: block;
         font-weight: 700;
         font-size: x-large;
-        padding: 0 20px;
-        color: var(--text-color);
+        padding: 12px;
+        color: var(--light-blue);
         z-index: 9;
     }
-    #mid-nav {
+    #main-menu {
         display: none;
     }
-    #mid-nav ul {
+    #about-me-left img{
+        width: 100%;
+    }
+    #main-menu ul {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        right: 0;
-        height: 100%;
-        width: 200px;
-        margin-top: -36px;
-        background-color: var(--body-color);
+        background-color: #374151ad;
+        position: absolute;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        top:18%;
+        left: 50%;
+        animation: slide 1s linear;
         z-index: 1;
-        transition: width 2s;
     }
-
-    #mid-nav ul li{
-        padding: 16px;
+    @keyframes slide {
+        0%{
+            top:-1%;
+        }
+        100%{
+            top:18%;
+        }
     }
 
   }

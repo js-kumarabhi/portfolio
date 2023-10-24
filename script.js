@@ -1,3 +1,17 @@
+// Sticky Navbar
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("bottom-nav");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
 // Typing effect
 new TypeIt("#type1", {
   speed: 100,
@@ -48,26 +62,22 @@ function openTab(evt, tabName) {
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
 
-
 // Mobile Menu
+var mobileBtn = document.getElementById("mobile-btn");
+var mainMenu = document.getElementById("main-menu");
+var menuVisible = false;
 
-        var mobileBtn = document.getElementById("mobile-btn");
-        var midNav = document.getElementById("mid-nav");
-        var menuVisible = false;
+mobileBtn.addEventListener("click", function () {
 
-        mobileBtn.addEventListener("click", function () {
+    if (menuVisible) {
+        mainMenu.style.display = "none";
+        mobileBtn.className = "ri-menu-line";
+        
+    } else {
+        mainMenu.style.display = "block";
+        mobileBtn.className = "ri-close-fill";    
+    }
 
-            if (menuVisible) {
-                midNav.style.display = "none";
-                mobileBtn.className = "ri-menu-3-line";
-                
-            } else {
-                midNav.style.display = "block";
-                mobileBtn.className = "ri-close-fill";
-                
-            }
-
-            // Toggle the menu visibility flag
-            menuVisible = !menuVisible;
-        });
-
+    // Toggle the menu visibility flag
+    menuVisible = !menuVisible;
+});
