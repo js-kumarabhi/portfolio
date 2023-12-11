@@ -263,10 +263,10 @@ main{
 
 
 #right-side img{
-    border: 1px solid var(--background-top-nav);
+    border: 1px solid var(--light-blue);
     padding: 20px;
     border-radius: 50%;
-    filter: drop-shadow(2px 4px 6px #000);
+    /* filter: drop-shadow(2px 4px 6px #000); */
 }
 
 #about, #portfolio, #contact{
@@ -437,7 +437,8 @@ hr{
 }
 #contact-info ul li{
     font-size: large;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 #contact-info ul li:hover{
     color: var(--light-blue);
